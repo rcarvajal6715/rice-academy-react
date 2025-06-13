@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import React from 'react'
 
+
 export default function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -31,7 +32,7 @@ export default function HomePage() {
           <ul className="nav-links-desktop">
             <li><a href="/index.html">Home</a></li>
             <li><a href="/about.html">About</a></li>
-            <li><a href="/programs.html">Programs</a></li>
+            <Link to="/programs">Programs</Link>
             <li><a href="/schedule.html">Schedule</a></li>
             <li><a href="/contact.html">Contact</a></li>
             <li><a href="booking.html" className="highlighted-nav">Book</a></li>

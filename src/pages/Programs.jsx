@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Head from 'next/head'; // Import Head for managing document head
 import Header from '../components/Header';
 import Navigation from '../components/Navigation';
 import ProgramCard from '../components/ProgramCard';

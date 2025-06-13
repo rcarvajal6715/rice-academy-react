@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link'; // Using Next.js Link for client-side navigation
+import { Link } from 'react-router-dom'; // Using Next.js Link for client-side navigation
 
 const Header = () => {
   // Basic state for mobile menu toggle, actual implementation might vary
@@ -30,7 +30,7 @@ const Header = () => {
           {/* Site Title */}
           <div className="text-center flex-grow md:ml-0 md:mr-0 mx-auto md:mx-0"> {/* Adjusted for flex layout, mx-auto centers it when button is present */}
             <h1 className="text-lg md:text-2xl font-bold my-0 text-white">
-              <Link href="/">C2 Tennis Academy</Link>
+              <Link to="/">C2 Tennis Academy</Link>
             </h1>
             <p className="text-sm md:text-base my-0 text-[#f0f0f0] hidden md:block">
               {/* Subtitle can be dynamic if needed */}
@@ -50,11 +50,11 @@ const Header = () => {
       <nav className="main-navigation bg-[#092e5e] hidden md:block">
         <div className="flex justify-center items-center w-full max-w-[1200px] mx-auto px-[20px]">
           <ul className="list-none m-0 p-0 flex space-x-1">
-            <li><Link href="/" className="text-white py-[14px] px-[20px] no-underline block rounded-full hover:bg-[#0f4fa0]">Home</Link></li>
-            <li><Link href="/about" className="text-white py-[14px] px-[20px] no-underline block rounded-full hover:bg-[#0f4fa0]">About</Link></li>
-            <li><Link href="/programs" className="text-white py-[14px] px-[20px] no-underline block rounded-full hover:bg-[#0f4fa0]">Programs</Link></li>
-            <li><Link href="/schedule" className="text-white py-[14px] px-[20px] no-underline block rounded-full hover:bg-[#0f4fa0]">Schedule</Link></li>
-            <li><Link href="/contact" className="text-white py-[14px] px-[20px] no-underline block rounded-full hover:bg-[#0f4fa0]">Contact</Link></li>
+            <li><Link to="/" className="text-white py-[14px] px-[20px] no-underline block rounded-full hover:bg-[#0f4fa0]">Home</Link></li>
+            <li><Link to="/about" className="text-white py-[14px] px-[20px] no-underline block rounded-full hover:bg-[#0f4fa0]">About</Link></li>
+            <li><Link to="/programs" className="text-white py-[14px] px-[20px] no-underline block rounded-full hover:bg-[#0f4fa0]">Programs</Link></li>
+            <li><Link to="/schedule" className="text-white py-[14px] px-[20px] no-underline block rounded-full hover:bg-[#0f4fa0]">Schedule</Link></li>
+            <li><Link to="/contact" className="text-white py-[14px] px-[20px] no-underline block rounded-full hover:bg-[#0f4fa0]">Contact</Link></li>
           </ul>
         </div>
       </nav>
@@ -75,13 +75,13 @@ const Header = () => {
         </div>
 
         <ul className="list-none p-0 my-[20px] mx-0">
-          <li><Link href="/" className="text-white py-[15px] px-[20px] no-underline block border-b border-[#0c3c78] rounded-full hover:bg-[#0f4fa0]" onClick={toggleMobileMenu}>Home</Link></li>
-          <li><Link href="/instructor-portal" className="text-white py-[15px] px-[20px] no-underline block border-b border-[#0c3c78] rounded-full hover:bg-[#0f4fa0]" onClick={toggleMobileMenu}>Instructor Portal</Link></li>
-          <li><Link href="/booking" className="text-white py-[15px] px-[20px] no-underline block border-b border-[#0c3c78] rounded-full hover:bg-[#0f4fa0]" onClick={toggleMobileMenu}>Book a Session</Link></li>
-          <li><Link href="/about" className="text-white py-[15px] px-[20px] no-underline block border-b border-[#0c3c78] rounded-full hover:bg-[#0f4fa0]" onClick={toggleMobileMenu}>About</Link></li>
-          <li><Link href="/programs" className="text-white py-[15px] px-[20px] no-underline block border-b border-[#0c3c78] rounded-full hover:bg-[#0f4fa0]" onClick={toggleMobileMenu}>Programs</Link></li>
-          <li><Link href="/schedule" className="text-white py-[15px] px-[20px] no-underline block border-b border-[#0c3c78] rounded-full hover:bg-[#0f4fa0]" onClick={toggleMobileMenu}>Schedule</Link></li>
-          <li><Link href="/contact" className="text-white py-[15px] px-[20px] no-underline block rounded-full hover:bg-[#0f4fa0] last:border-b-0" onClick={toggleMobileMenu}>Contact</Link></li>
+          <li><Link to="/" className="text-white py-[15px] px-[20px] no-underline block border-b border-[#0c3c78] rounded-full hover:bg-[#0f4fa0]" onClick={toggleMobileMenu}>Home</Link></li>
+          <li><Link to="/instructor-portal" className="text-white py-[15px] px-[20px] no-underline block border-b border-[#0c3c78] rounded-full hover:bg-[#0f4fa0]" onClick={toggleMobileMenu}>Instructor Portal</Link></li>
+          <li><Link to="/booking" className="text-white py-[15px] px-[20px] no-underline block border-b border-[#0c3c78] rounded-full hover:bg-[#0f4fa0]" onClick={toggleMobileMenu}>Book a Session</Link></li>
+          <li><Link to="/about" className="text-white py-[15px] px-[20px] no-underline block border-b border-[#0c3c78] rounded-full hover:bg-[#0f4fa0]" onClick={toggleMobileMenu}>About</Link></li>
+          <li><Link to="/programs" className="text-white py-[15px] px-[20px] no-underline block border-b border-[#0c3c78] rounded-full hover:bg-[#0f4fa0]" onClick={toggleMobileMenu}>Programs</Link></li>
+          <li><Link to="/schedule" className="text-white py-[15px] px-[20px] no-underline block border-b border-[#0c3c78] rounded-full hover:bg-[#0f4fa0]" onClick={toggleMobileMenu}>Schedule</Link></li>
+          <li><Link to="/contact" className="text-white py-[15px] px-[20px] no-underline block rounded-full hover:bg-[#0f4fa0] last:border-b-0" onClick={toggleMobileMenu}>Contact</Link></li>
         </ul>
       </div>
     </>

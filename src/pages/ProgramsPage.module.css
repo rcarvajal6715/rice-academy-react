@@ -1,0 +1,154 @@
+/* General Main Content Styling */
+.mainContent {
+    max-width: 1200px;
+    margin: 20px auto; /* Top/bottom margin, auto for left/right centering */
+    padding: 0 20px; /* Padding on the sides */
+    box-sizing: border-box;
+}
+
+/* Welcome Section */
+.welcomeSection {
+    text-align: center;
+    padding: 30px 15px;
+    background-color: #f4f7fc; /* Light blue/gray background */
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.welcomeTextContainer h1 {
+    color: #0c3c78; /* Academy blue */
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.welcomeTextContainer p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333; /* Dark gray for readability */
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the paragraph */
+}
+
+/* Programs Display Section */
+.programsDisplay {
+    margin-bottom: 40px;
+}
+
+.programsDisplay h2 {
+    text-align: center;
+    color: #0c3c78; /* Academy blue */
+    font-size: 2em;
+    margin-bottom: 30px; /* Space below the header */
+    border-bottom: 2px solid #d8f352; /* Accent color underline */
+    padding-bottom: 10px;
+    display: inline-block; /* To make border-bottom only span text width */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.programList {
+    /* Styles for the container of program cards if needed, e.g., grid layout */
+    /* ProgramCard component itself has flex display defined in its module */
+}
+
+/* Location Section */
+.locationSection {
+    text-align: center;
+    padding: 30px 15px;
+    background-color: #e9eef5; /* Slightly different background for separation */
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.locationSection h2 {
+    color: #0c3c78;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.locationSection p {
+    font-size: 1.05em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.mapContainer {
+    width: 100%;
+    max-width: 800px; /* Max width for the map */
+    height: 400px; /* Default height */
+    margin: 20px auto 0; /* Margin top, auto for left/right */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the iframe respects border-radius */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.mapContainer iframe {
+    width: 100%;
+    height: 100%;
+    border: 0; /* Remove default iframe border */
+}
+
+
+/* Responsive Styles from programs.html (adapted) */
+@media (max-width: 992px) { /* Medium devices (tablets, less than 992px) */
+    .welcomeTextContainer h1 {
+        font-size: 2.2em;
+    }
+    .welcomeTextContainer p {
+        font-size: 1em;
+    }
+    .programsDisplay h2, .locationSection h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 768px) { /* Small devices (landscape phones, less than 768px) */
+    .mainContent {
+        margin-top: 10px;
+        padding: 0 15px;
+    }
+    .welcomeSection {
+        padding: 20px 10px;
+        margin-bottom: 30px;
+    }
+    .welcomeTextContainer h1 {
+        font-size: 1.8em;
+    }
+    .welcomeTextContainer p {
+        font-size: 0.95em;
+    }
+    .programsDisplay h2, .locationSection h2 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+    .programList {
+        /* Adjustments for program cards on smaller screens might be here if not handled by ProgramCard's own responsive styles */
+    }
+    .locationSection {
+        padding: 20px 10px;
+        margin-bottom: 30px;
+    }
+    .locationSection p {
+        font-size: 1em;
+    }
+    .mapContainer {
+        height: 300px; /* Adjust map height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) { /* Extra small devices (portrait phones, less than 480px) */
+    .welcomeTextContainer h1 {
+        font-size: 1.5em;
+    }
+    .welcomeTextContainer p {
+        font-size: 0.9em;
+    }
+    .programsDisplay h2, .locationSection h2 {
+        font-size: 1.4em;
+    }
+    .locationSection p {
+        font-size: 0.9em;
+    }
+}

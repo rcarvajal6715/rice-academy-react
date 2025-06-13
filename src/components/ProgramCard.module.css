@@ -1,0 +1,64 @@
+.program {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.programImg {
+  width: 280px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  flex-shrink: 0;
+}
+
+.program h3 { /* Program titles like "Kids Camp" */
+  color: #0c3c78;
+  /* Add other h3 styles if any, e.g., font-size, margin */
+}
+
+/* Example: if program descriptions have specific styling */
+.program p {
+  /* styles for description paragraphs */
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+
+/* === Responsive Styles for program card from programs.html CONTENT === */
+@media (max-width: 768px) {
+  .program {
+    flex-direction: column; 
+    align-items: center;   
+    text-align: center;    
+  }
+  .programImg {
+    width: 100%;          
+    max-width: 280px;     
+    height: auto;         
+    margin-bottom: 10px;  
+  }
+  .program > div { /* This targets the div containing text content */
+    width: 100%; 
+  }
+  .program h3 { 
+    font-size: 1.3em;
+  }
+  .program p {
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .programImg {
+    max-width: 220px; 
+  }
+  .program h3 {
+    font-size: 1.1em;
+  }
+  .program p {
+    font-size: 0.9em;
+  }
+}

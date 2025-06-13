@@ -1,5 +1,6 @@
 // src/components/Navigation.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Navigation.module.css'; // To be created
 
 const Navigation = ({
@@ -29,12 +30,12 @@ const Navigation = ({
       {/* Desktop Navigation */}
       <div className={styles.navWrapperDesktop}>
         <ul className={styles.navLinksDesktop}>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="schedule.html">Schedule</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="booking.html" className={styles.highlightedNav}>Book</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/programs">Programs</Link></li>
+          <li><Link to="/schedule">Schedule</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/booking" className={styles.highlightedNav}>Book</Link></li>
         </ul>
       </div>
 
@@ -49,23 +50,23 @@ const Navigation = ({
             &times; {/* Close icon */}
           </button>
           <ul className={styles.navLinksMobile}>
-            <li><a href="index.html" onClick={handleLinkClick}>Home</a></li>
-            <li><a href="about.html" onClick={handleLinkClick}>About</a></li>
-            <li><a href="programs.html" onClick={handleLinkClick}>Programs</a></li>
-            <li><a href="schedule.html" onClick={handleLinkClick}>Schedule</a></li>
-            <li><a href="contact.html" onClick={handleLinkClick}>Contact</a></li>
-            <li><a href="booking.html" onClick={handleLinkClick}>Book</a></li>
+            <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
+            <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
+            <li><Link to="/programs" onClick={handleLinkClick}>Programs</Link></li>
+            <li><Link to="/schedule" onClick={handleLinkClick}>Schedule</Link></li>
+            <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
+            <li><Link to="/booking" onClick={handleLinkClick}>Book</Link></li>
           </ul>
           <div className={styles.authButtonsMobile} id="authContainerMobile">
             {isLoggedIn ? (
               <>
-                <a href={portalPath} onClick={handleLinkClick}><button>{portalName}</button></a>
+                <Link to={portalPath} onClick={handleLinkClick}><button>{portalName}</button></Link>
                 <button onClick={handleMobileLogout}>Logout</button>
               </>
             ) : (
               <>
-                <a href="register.html" onClick={handleLinkClick}><button id="registerBtnMobile">Register</button></a>
-                <a href="login.html" onClick={handleLinkClick}><button id="loginBtnMobile">Login</button></a>
+                <Link to="/register" onClick={handleLinkClick}><button id="registerBtnMobile">Register</button></Link>
+                <Link to="/login" onClick={handleLinkClick}><button id="loginBtnMobile">Login</button></Link>
               </>
             )}
           </div>
