@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import HomePage from './HomePage'
+import HomePage from "./pages/HomePage";
 import '../globals.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

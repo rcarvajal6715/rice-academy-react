@@ -1,0 +1,149 @@
+/* src/components/Navigation.module.css */
+.mainNavigation {
+  background-color: #092e5e;
+  z-index: 9;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navWrapperDesktop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+ul.navLinksDesktop {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+ul.navLinksDesktop li a {
+  color: white;
+  padding: 12px 20px;
+  display: block;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+ul.navLinksDesktop li a:hover {
+  background-color: #0f4fa0;
+  text-decoration: none;
+}
+
+ul.navLinksDesktop li a.highlightedNav {
+  background-color: #d8f352;
+  color: black;
+  font-weight: bold;
+  border-radius: 9999px;
+}
+
+ul.navLinksDesktop li a.highlightedNav:hover {
+  background-color: #c1da3b;
+}
+
+/* Mobile Menu Styles */
+.mobileMenuContainer {
+  display: none; /* Hidden by default, shown when isMobileMenuOpen is true / .mobileMenuOpen is active */
+  background-color: #092e5e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100; /* Higher than header to overlay */
+  padding-top: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.mainNavigation.mobileMenuOpen .mobileMenuContainer { /* This style is not directly used due to conditional rendering of the container */
+    /* display: block; */ /* Handled by conditional rendering in JSX */
+}
+/* If not using conditional rendering for the container but CSS display none/block based on parent: */
+.mainNavigation .mobileMenuContainer { /* Default state if always rendered */
+    display: none;
+}
+.mainNavigation.mobileMenuOpen .mobileMenuContainer { /* State when menu is open */
+    display: block;
+}
+
+
+.mobileMenuClose {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+ul.navLinksMobile {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+ul.navLinksMobile li a {
+  color: white;
+  padding: 15px 20px;
+  display: block;
+  border-bottom: 1px solid #0c3c78;
+  border-radius: 0; /* Mobile links usually are not pills */
+  text-decoration: none;
+}
+ul.navLinksMobile li:last-child a {
+    border-bottom: none;
+}
+
+
+ul.navLinksMobile li a:hover {
+  background-color: #0f4fa0;
+  text-decoration: none;
+}
+
+.authButtonsMobile {
+  padding: 20px;
+}
+
+.authButtonsMobile a button,
+.authButtonsMobile button {
+  background-color: #d8f352;
+  color: #0c3c78;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  width: 80%;
+  max-width: 250px;
+  margin: 10px auto;
+  box-sizing: border-box;
+}
+
+.authButtonsMobile a button:hover,
+.authButtonsMobile button:hover {
+  background-color: #c1da3b;
+}
+
+/* Responsive adjustments for navigation visibility */
+@media (max-width: 768px) {
+  .navWrapperDesktop {
+    display: none; /* Hide desktop nav on mobile */
+  }
+  .mainNavigation {
+    background-color: transparent; /* Nav itself becomes transparent as container is fixed */
+  }
+   /* .mobileMenuContainer is already controlled by isMobileMenuOpen for display */
+}
+

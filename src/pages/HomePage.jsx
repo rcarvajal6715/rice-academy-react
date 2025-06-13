@@ -62,7 +62,7 @@ export default function HomePage() {
           <div className="hero-content">
             <h1 className="hero-title">WELCOME TO</h1>
             <img
-              src="/C2white.png"
+              src="/images/C2white.png"
               alt="C2 Tennis Academy logo"
               className="hero-logo"
             />
@@ -75,7 +75,7 @@ export default function HomePage() {
         <div className="footer-wrapper">
           {/* Contact Details */}
           <div className="footer-col">
-            <img src="/C2white.png" alt="C2 Tennis Academy logo" className="footer-logo" />
+            <img src="/images/C2white.png" alt="C2 Tennis Academy logo" className="footer-logo" />
             <h4>Contact Us</h4>
 
             <p className="contact-item">
