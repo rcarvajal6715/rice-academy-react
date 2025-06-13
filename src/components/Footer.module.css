@@ -1,0 +1,173 @@
+.siteFooter {
+  background-color: #0c3c78;
+  color: white;
+  text-align: center;
+  padding: 8px 10px; /* Reduced padding */
+  margin-top: auto;
+}
+
+.siteFooter a { /* Make all footer links white */
+  color: white !important; /* important to override potential global styles */
+  text-decoration: none;
+}
+.siteFooter a:hover {
+  text-decoration: underline;
+}
+
+.footerWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap; /* Changed from wrap to nowrap as per original */
+  align-items: center; /* Vertically center items in the wrapper */
+  max-width: 1200px; /* Standard max-width */
+  margin: 0 auto; /* Center the wrapper */
+}
+
+.footerCol {
+  flex: 1 1 200px; /* Allow shrinking and growing, base width 200px */
+  margin: 5px;    /* Reduced margin */
+  text-align: left; /* Align text to left for columns */
+}
+.footerCol:last-child { /* Right align the last column (Branding) */
+    text-align: right;
+}
+
+
+.footerCol h4 {
+  margin-bottom: 4px; /* Reduced margin */
+  font-size: 1em; /* Adjust as needed */
+}
+
+.footerLogo {
+  display: block;
+  max-width: 100px; /* Adjusted from 120px for better fit */
+  margin: 0 0 10px 0; /* Margin for logo: auto left/right removed */
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin: 4px 0; /* Reduced margin */
+  font-size: 0.9em;
+}
+
+.contactIcon {
+  width: 18px; /* Slightly smaller icon */
+  height: 18px;
+  fill: white;
+  margin-right: 8px;
+}
+
+.newsletterSignup {
+  /* Specific styles for newsletter column if needed */
+   margin-bottom: 8px;
+}
+
+.newsletterSignup input[type="email"] {
+  width: calc(100% - 95px); /* Adjusted width */
+  padding: 8px; /* Adjusted padding */
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.newsletterSignup button[type="submit"] {
+  width: 85px; /* Adjusted width */
+  padding: 8px; /* Adjusted padding */
+  background-color: #d8f352;
+  color: #0c3c78;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.newsletterSignup button[type="submit"]:hover {
+  background-color: #c1da3b;
+}
+
+.newsletterMessage {
+  margin-top: 8px; /* Adjusted margin */
+  padding: 8px; /* Adjusted padding */
+  border-radius: 3px;
+  font-size: 0.85em; /* Adjusted font size */
+  text-align: center;
+}
+
+.newsletterMessage.success { /* Naming convention for CSS Modules */
+  background-color: #e6ffed;
+  color: #006421;
+  border: 1px solid #c3e6cb;
+}
+
+.newsletterMessage.error { /* Naming convention for CSS Modules */
+  background-color: #ffe6e6;
+  color: #800000;
+  border: 1px solid #f5c6cb;
+}
+
+.social {
+  /* Specific styles for social column */
+   margin-bottom: 8px;
+   text-align: center; /* Center social icons if they are in their own column */
+}
+.social h4 {
+    text-align: left; /* Keep heading aligned with others */
+}
+
+.socialIcon {
+  filter: brightness(0) invert(1);
+  width: 24px; /* Adjust size as needed */
+  height: 24px;
+  margin: 0 5px; /* Spacing between icons */
+}
+
+.footerCol p { /* General paragraph styling within footer columns */
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+
+/* Responsive adjustments for footer */
+@media (max-width: 768px) {
+  .footerWrapper {
+    flex-direction: column;
+    align-items: center; /* Center items when stacked */
+    text-align: center;
+  }
+  .footerCol {
+    flex-basis: auto; /* Allow columns to take their content size */
+    width: 90%; /* Use most of the width */
+    margin: 10px 0; /* Add vertical spacing */
+    text-align: center !important; /* Center text for all columns on mobile */
+  }
+  .footerCol:last-child {
+    text-align: center !important; /* Ensure branding is also centered */
+  }
+  .footerLogo {
+    margin: 0 auto 10px auto; /* Center logo on mobile */
+  }
+  .newsletterSignup input[type="email"],
+  .newsletterSignup button[type="submit"] {
+    width: calc(70% - 5px); /* Adjust input/button width for stacked layout */
+    margin-bottom: 5px;
+  }
+   .newsletterSignup button[type="submit"] {
+     width: 25%;
+   }
+}
+
+@media (max-width: 480px) {
+  .newsletterSignup input[type="email"],
+  .newsletterSignup button[type="submit"] {
+    width: 100%;
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px; /* Increased margin for better touch targets */
+  }
+}

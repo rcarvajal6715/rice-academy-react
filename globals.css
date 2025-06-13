@@ -1,0 +1,646 @@
+
+
+
+@custom-variant dark (&:is(.dark *));
+
+/* globals.css */
+
+/* Tailwind base styles */
+@tailwind base;
+
+/* Tailwind component styles */
+@tailwind components;
+
+/* Tailwind utility classes */
+@tailwind utilities;
+
+/* === Custom global styles === */
+
+body {
+  @apply bg-white text-gray-800;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold text-gray-900;
+}
+
+input, select, textarea {
+  @apply border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+label {
+  @apply block mb-1 font-medium text-sm text-gray-700;
+}
+
+button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.btn {
+  @apply px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Extracted CSS from index.html */
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    /* ===== Blue “Explore” button ===== */
+.explore-button {
+  font-family: Arial, sans-serif; /* same as <body> */
+  font-size: 1rem;                /* matches nav links’ default */
+  font-weight: 400;               /* normal weight, like the links */
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 9999px;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0   4px  6px -2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transform-origin: center center;
+  transition: background-color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.explore-button:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+    }
+    main {
+      flex: 1;
+    }
+    /* Footer style from original, assuming it's global or at least used here */
+    footer {
+      background-color: #0c3c78;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative; /* Kept from original, might not be needed globally */
+    }
+    
+    /* === Full-screen hero container === */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: url("/images/newbackground.png") center/cover no-repeat; /* Updated path */
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+    }
+
+    /* === Centered content === */
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    /* === Animation keyframe === */
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* === Staggered animated elements === */
+    .hero-title,
+    .hero-subtitle,
+    .hero-cta {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlide 0.6s ease-out forwards;
+    }
+    .hero-title {
+      animation-delay: 0.3s;
+      font-size: 3rem;
+      margin: 0;
+    }
+    .hero-subtitle {
+      animation-delay: 0.6s;
+      font-size: 1.5rem;
+      margin: 1rem 0 0;
+    }
+    .hero-cta {
+      animation-delay: 0.9s;
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #d8f352; /* C2 green */
+      color: #0c3c78;            /* C2 dark */
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 9999px;
+      transition: transform 0.2s ease;
+    }
+    .hero-cta:hover {
+      transform: scale(1.05);
+    }
+    .hero-cta:active {
+      transform: scale(0.95);
+    }
+    
+/* === Global Header & Navigation Styles (Revised for Desktop) === */
+     header {
+       background-color: #0c3c78; 
+       color: white; 
+       padding: 30px 20px; /* MODIFIED */
+       position: relative; 
+       text-align: center; 
+     }
+     .header-content { /* Wraps site-title and mobile-menu-toggle */
+       display: flex; justify-content: center; align-items: center; /* Centered title for desktop */
+       max-width: 1200px; 
+       margin: 0 auto;
+       position: relative; /* For mobile, allows toggle to be on the side */
+     }
+     .site-title { text-align: center; } /* Title centered */
+     .site-title h1 { 
+       font-size: 2.2em;    /* MODIFIED */
+       margin-top: 0;
+       margin-bottom: 0.25em; 
+       color: white; 
+     } 
+     .site-title p { 
+       font-size: 1em;    
+       margin-top: 0;
+       margin-bottom: 0;
+       color: #f0f0f0;
+     }
+
+     .mobile-menu-toggle { display: none; background: none; border: none; color: white; font-size: 28px; cursor: pointer; padding: 5px; }
+
+     nav.main-navigation { background-color: #092e5e; }
+     .nav-wrapper-desktop { /* Contains only the navigation links for desktop */
+         display: flex; justify-content: center; align-items: center;
+         width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;
+     }
+     ul.nav-links-desktop { list-style: none; margin: 0; padding: 0; display: flex; }
+     ul.nav-links-desktop li a { color: white; padding: 14px 20px; text-decoration: none; display: block; } /* MODIFIED */
+     ul.nav-links-desktop li a:hover { background-color: #0f4fa0; }
+     ul.nav-links-desktop li a.highlighted-nav { background-color: #d8f352; color: black; font-weight: bold; border-radius: 5px; }
+     ul.nav-links-desktop li a.highlighted-nav:hover { background-color: #c1da3b; }
+
+     .auth-buttons-desktop { /* Now absolutely positioned within header */
+       position: absolute;
+       top: 20px; 
+       right: 20px; 
+       display: flex;
+       align-items: center;
+     }
+     .auth-buttons-desktop a button, .auth-buttons-desktop button {
+       background-color: white; color: #0c3c78; border: none; padding: 10px 20px; /* MODIFIED */
+       margin-left: 10px; border-radius: 5px; font-weight: bold; cursor: pointer;
+       transition: all 0.3s ease; white-space: nowrap;
+     }
+     .auth-buttons-desktop a button:hover, .auth-buttons-desktop button:hover { background-color: #0f4fa0; color: white; }
+
+     /* Mobile menu container and its contents' base styles remain mostly unchanged */
+     .mobile-menu-container {
+       display: none; background-color: #092e5e; position: fixed;
+       top: 0; left: 0; width: 100%; height: 100%;
+       z-index: 1000; 
+       padding-top: 20px; 
+       box-sizing: border-box; overflow-y: auto; text-align: center;
+     }
+     nav.main-navigation.mobile-menu--open .mobile-menu-container { display: block; }
+     .mobile-menu-close {
+        display: block; 
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+     }
+     ul.nav-links-mobile { list-style: none; padding: 0; margin: 20px 0; }
+     ul.nav-links-mobile li a {
+       color: white; padding: 15px 20px; text-decoration: none; display: block;
+       border-bottom: 1px solid #0c3c78;
+     }
+     ul.nav-links-mobile li:last-child a { border-bottom: none; }
+     ul.nav-links-mobile li a:hover { background-color: #0f4fa0; }
+     .auth-buttons-mobile { padding: 20px; }
+     .auth-buttons-mobile a button, .auth-buttons-mobile button {
+       background-color: #d8f352; color: #0c3c78; border: none; padding: 12px 20px;
+       border-radius: 5px; font-weight: bold; cursor: pointer; display: block;
+       width: 80%; max-width: 250px; margin: 10px auto; box-sizing: border-box;
+     }
+     .auth-buttons-mobile a button:hover, .auth-buttons-mobile button:hover { background-color: #c1da3b; }
+     
+
+     @media (max-width: 768px) {
+       /* General body text adjust if not already global for mobile */
+       body { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+       header { padding: 10px 15px; /* Adjusted mobile header padding - this is NOT the one to change */ }
+       .header-content {
+         justify-content: space-between; /* Title left, toggle right for mobile */
+         width:100%; 
+       }
+       .site-title { text-align: left; } /* Title to the left on mobile */
+       /* Mobile site title font sizes (overriding the new desktop ones) */
+       .site-title h1 { font-size: 1.2em; margin-bottom: 0; /* Reset bottom margin for mobile if needed */ }
+       .site-title p { display: none; } 
+
+       .mobile-menu-toggle { display: block; } /* Show hamburger */
+       
+       .nav-wrapper-desktop { display: none; } /* Hide desktop nav links */
+       .auth-buttons-desktop { display: none; } /* Hide desktop (absolute) auth buttons */
+
+       nav.main-navigation { padding: 0; background-color: transparent; } /* Nav becomes container for mobile menu only */
+     }
+
+/* Page-specific responsive styles for index.html (Hero section) */
+/* Hero Section specific responsive styles from old rules */
+@media (max-width: 768px) {
+    .hero {
+        padding: 20px 15px; /* Adjusted padding for full vh */
+        min-height: 100vh; /* Make hero section full viewport height */
+        /* background-image: url('/mobilebackground.png'); Removed */ /* Updated path */
+        background-image: url("/blackbackground.png"); /* Updated path */
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        /* Add flexbox properties for vertical centering of content */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box; /* Ensure padding doesn't add to 100vh */
+    }
+
+    .mobile-hero-spinning-image {
+        max-width: 70%; /* Make image smaller than container */
+        max-height: 70vh; /* Ensure it doesn't get too tall */
+        object-fit: contain; /* Show whole image, scaled down, letterboxed if needed */
+        display: block; /* Ensure it's displayed for animation */
+        animation-name: spin;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        /* Centering is handled by parent .hero flex properties */
+    }
+
+    .hero h1 {
+        font-size: 2.8em; /* Adjusted font size */
+        color: white; /* Adjusted color */
+        position: absolute;
+        top: 25%; /* Adjusted top position */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%; /* Adjusted width */
+        max-width: 600px; /* Max-width for safety */
+        text-align: center; /* Ensure text is centered */
+    }
+    .hero p {
+        font-size: 1.1em; 
+        color: white; /* Changed for visibility on black background */
+        text-shadow: none; 
+    }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem; /* Smaller on mobile phones */
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-cta {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+/* Make desktop nav links more pill-shaped */
+ul.nav-links-desktop li a {
+  border-radius: 9999px;
+}
+
+/* Ensure highlighted tab stays pill-shaped */
+ul.nav-links-desktop li a.highlighted-nav {
+  border-radius: 9999px;
+}
+
+/* Make mobile nav links match */
+ul.nav-links-mobile li a {
+  border-radius: 9999px;
+}
+/* Override the highlighted “Book” pill to be fully rounded */
+ul.nav-links-desktop li a.highlighted-nav {
+  border-radius: 9999px;
+}
+
+/* If you also want the mobile “Book” link rounded, do: */
+ul.nav-links-mobile li a.highlighted-nav {
+  border-radius: 9999px;
+}
+
+/* Make all footer links white */
+.site-footer a {
+  color: white !important;
+}
+
+/* Color the social-icon <img> white via CSS filter */
+.social-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Footer contact icons */
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin: 6px 0;
+}
+.contact-item .contact-icon {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  margin-right: 8px;
+}
+
+/* Newsletter form */
+.newsletter-signup input[type="email"] {
+  width: calc(100% - 90px);
+  padding: 10px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+}
+.newsletter-signup button[type="submit"] {
+  width: 80px;
+  padding: 10px;
+  background-color: #d8f352;
+  color: #0c3c78;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+}
+.newsletter-signup button[type="submit"]:hover {
+  background-color: #c1da3b;
+}
+.newsletter-message {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+.newsletter-message.success {
+  background-color: #e6ffed;
+  color: #006421;
+  border: 1px solid #c3e6cb;
+}
+.newsletter-message.error {
+  background-color: #ffe6e6;
+  color: #800000;
+  border: 1px solid #f5c6cb;
+}
+
+@media (max-width: 480px) {
+  .newsletter-signup input[type="email"],
+  .newsletter-signup button[type="submit"] {
+    width: 100%;
+    display: block;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  .newsletter-signup input[type="email"] {
+    margin-bottom: 10px;
+  }
+}
+
+.footer-logo {
+  display: block;
+  max-width: 120px;
+  margin: 0 auto 12px;
+}
+
+/* Final wrapper override */
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.footer-col {
+  flex: 0 0 auto;
+  margin: 0 16px;
+}
+
+/* ---- Reduce footer height ---- */
+footer.site-footer {
+  /* shrink top & bottom padding from 20px to 8px */
+  padding: 8px 10px;
+}
+
+/* tighten up column gutters */
+.footer-col {
+  /* shrink margin from 10px to 5px */
+  flex: 1 1 200px;
+  margin: 5px;
+}
+
+/* reduce spacing under each heading */
+.footer-col h4 {
+  margin-bottom: 4px; /* was 8px */
+}
+
+/* tighten up contact items vertically */
+.contact-item {
+  margin: 4px 0; /* was 6px 0 */
+}
+
+/* if you want the newsletter and social blocks a bit tighter: */
+.newsletter-signup,
+.social {
+  margin-bottom: 8px; /* add if you need extra control */
+}
+
+
+.hero-content {
+  /* add a little gap between items */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.10rem;   /* ← controls vertical spacing */
+}
+
+.hero-logo {
+  max-width: 200px;
+  width: 50%;
+  
+  /* remove animation margin */
+  margin: -0.8rem auto 0;  /* pull it up by 0.2rem */
+  
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlide 0.6s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+/* apply it just to the hero */
+.hero-content {
+  font-family: 'Cosmic Octo', sans-serif;
+}
+
+/* or override only the title and button */
+.hero-title,
+.hero-cta {
+  font-family: 'Cosmic Octo', sans-serif;
+}
+.hero-title {
+  font-size: 3rem;   /* tweak as desired */
+}
+
+.hero-title,
+.hero-cta {
+  font-family: 'Orbitron', sans-serif;
+}
